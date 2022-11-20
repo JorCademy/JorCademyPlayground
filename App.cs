@@ -11,9 +11,6 @@ namespace JorCademyPlayground
         private static GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         
-        // Window properties
-        public Color BackgroundColor;
-        
         // Containing all primitives in the scene
         private List<GameObject> objectsInScene;
 
@@ -27,7 +24,6 @@ namespace JorCademyPlayground
             // Init window
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 600;
-            this.BackgroundColor = Color.White;
 
             // Initialize list of textures within scene
             objectsInScene = new List<GameObject>();       
@@ -60,6 +56,12 @@ namespace JorCademyPlayground
             Window.Title = title;
         }
 
+        /* Refresh screen */
+        public void ClearScreen(Color c)
+        {
+            GraphicsDevice.Clear(c);
+        }
+
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -67,39 +69,28 @@ namespace JorCademyPlayground
 
         protected override void Update(GameTime gameTime)
         {
+            // Clear current frame buffer
+            this.objectsInScene.Clear();
+
             base.Update(gameTime);
         }
 
-        /* Drawing primitives, Source: https://lajbert.github.io/blog/monogame_2d_primitives/#/ */
-
         /* Drawing rectangle */
-        public static Texture2D CreateRectangle(int size, Color color)
+        public void Square(float x, float y, int size, Color color)
         {
-            Texture2D rect = new Texture2D(_graphics.GraphicsDevice, size, size);
-            Color[] data = new Color[size * size];
-
-            for (int i = 0; i < data.Length; ++i)
-            {
-                data[i] = color;
-            }
-
-            rect.SetData(data);
-            return rect;
+            this.objectsInScene.Add(new Rectangle(_graphics, new Vector2(x, y), size, color));
         }
 
         /* Drawing circle */
-        public void Ellipse(int x, int y, int size, Color color)
+        public void Circle(float x, float y, int size, Color color)
         {
-            this.objectsInScene.Add(new Ellipse(_graphics, new Vector2(x, y), size, color));
+            this.objectsInScene.Add(new Circle(_graphics, new Vector2(x, y), size, color));
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            // Reset screen
-            GraphicsDevice.Clear(BackgroundColor);
-    
             // Update JorCademy app
-            jcApp.Update(gameTime);
+            jcApp.Draw(gameTime);
 
             // Draw all textures within the game
             _spriteBatch.Begin();

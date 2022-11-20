@@ -7,7 +7,7 @@ namespace JorCademyPlayground
 {
     public abstract class GameObject
     {
-        protected Vector2 m_position;
+        public Vector2 m_position;
         protected int m_width;
         protected int m_height;
         protected Color m_color;
@@ -32,9 +32,9 @@ namespace JorCademyPlayground
         public abstract Texture2D CreateTexture();
     }
 
-    public class Ellipse : GameObject
+    public class Circle : GameObject
     {
-        public Ellipse(GraphicsDeviceManager g, Vector2 pos, int size, Color c)
+        public Circle(GraphicsDeviceManager g, Vector2 pos, int size, Color c)
         {
             this.m_position = pos;
             this.m_width = size;
@@ -44,9 +44,9 @@ namespace JorCademyPlayground
         }
 
         /* Create circle texture. Source: https://lajbert.github.io/blog/monogame_2d_primitives/#/ */
-        public Texture2D CreateCircle(GraphicsDeviceManager g)
+        public Texture2D CreateCircle()
         {
-            Texture2D texture = new Texture2D(g.GraphicsDevice, this.m_width, this.m_height);
+            Texture2D texture = new Texture2D(this.m_graphics.GraphicsDevice, this.m_width, this.m_height);
             Color[] colorData = new Color[m_width * m_height];
 
             int diameter = this.m_width;
@@ -85,7 +85,40 @@ namespace JorCademyPlayground
         /* Create primitive texture */
         public override Texture2D CreateTexture()
         {
-            return this.CreateCircle(this.m_graphics);
+            return this.CreateCircle();
+        }
+    }
+
+    public class Rectangle : GameObject 
+    {
+        public Rectangle(GraphicsDeviceManager g, Vector2 pos, int size, Color c)
+        {
+            this.m_position = pos;
+            this.m_width = size;
+            this.m_height = size;
+            this.m_color = c;
+            this.m_graphics = g;
+        }
+
+        /* Create rectangle texture. Source: https://lajbert.github.io/blog/monogame_2d_primitives/#/ */
+        public Texture2D CreateRectangle()
+        {
+            Texture2D rect = new Texture2D(this.m_graphics.GraphicsDevice, this.m_width, this.m_height);
+            Color[] data = new Color[this.m_width * this.m_height];
+
+            for (int i = 0; i < data.Length; ++i)
+            {
+                data[i] = this.m_color;
+            }
+
+            rect.SetData(data);
+            return rect;
+        }
+
+        /* Create primitive texture */
+        public override Texture2D CreateTexture()
+        {
+            return this.CreateRectangle();
         }
     }
 }
