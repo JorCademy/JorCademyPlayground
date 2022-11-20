@@ -38,11 +38,11 @@ namespace JorCademyPlayground
             textures.Add(CreateRectangle(100, Color.White));
             textures.Add(CreateCircle(200, Color.White));
 
-            // Setup JC app
-            jcApp.Setup();
-
             // Set window title
             this.SetScreenTitle("JorCademy Playground");
+
+            // Setup JC app
+            jcApp.Setup();
 
             base.Initialize();
         }
@@ -55,7 +55,7 @@ namespace JorCademyPlayground
         }
 
         /* Set window title */
-        private void SetScreenTitle(string title)
+        public void SetScreenTitle(string title)
         {
             Window.Title = title;
         }
