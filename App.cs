@@ -91,7 +91,7 @@ namespace JorCademyPlayground
         /* Draw an image */
         public void Image(string name, float x, float y, int w, int h, Color color)
         {
-            objectsInScene.Add(new Sprite(_graphics, "mario.png", w, h, new Vector2(x, y), color));
+            objectsInScene.Add(new Sprite(_graphics, name, w, h, new Vector2(x, y), color));
         }
 
         protected override void Draw(GameTime gameTime)

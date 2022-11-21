@@ -15,6 +15,6 @@ public class Playground
 
     public void Draw()
     {
-        app.ClearScreen(Color.White);
+        
     }
 }
