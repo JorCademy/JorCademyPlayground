@@ -1,7 +1,6 @@
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
 
 namespace JorCademyPlayground 
 {
@@ -119,6 +118,30 @@ namespace JorCademyPlayground
         public override Texture2D CreateTexture()
         {
             return this.CreateRectangle();
+        }
+    }
+
+    public class Sprite : GameObject
+    {
+        private string m_fileName;
+
+        public Sprite(GraphicsDeviceManager g, string fileName, int width, int height, Vector2 pos, Color c)
+        {
+            this.m_fileName = fileName;
+            this.m_position = pos;
+            this.m_width = width;
+            this.m_height = height;
+            this.m_color = c;
+            this.m_graphics = g;
+        }
+
+        /* Create image texture. Source: https://community.monogame.net/t/loading-png-jpg-etc-directly/7403 */
+        public override Texture2D CreateTexture()
+        {
+            FileStream fileStream = new FileStream("Content/" + m_fileName, FileMode.Open);
+            Texture2D spriteAtlas = Texture2D.FromStream(this.m_graphics.GraphicsDevice, fileStream);
+            fileStream.Dispose();
+            return spriteAtlas;
         }
     }
 }
