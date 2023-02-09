@@ -1,6 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using JorCademyPlayground;
-new Playground();
+
+public class Program
+{
+    static void Main()
+    {
+        new Playground();
+    }
+}
+
 
 public partial class Playground
 {
