@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OfejsYmXsJlvJaqKQ6Ea4ZBOXbxMdMUQAP9Xd/N3FuG/vwuK/+yQKCUzldJLrRWviQoijKSIhaTLZqztE7Q9wQ==",
+  "dgSpecHash": "3NDR8a2pGnjPZC+jacgBnz0t5HaNCFWUL/8xQVOj1YiL4hI+Z+jQd9rcPIGyQaBex9PyKngb+J9tsXF2of3f/w==",
   "success": true,
-  "projectFilePath": "/home/martijn/Documents/JorCademy/JorCademyPlayground.csproj",
+  "projectFilePath": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
   "expectedPackageFiles": [
-    "/home/martijn/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "/home/martijn/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+    "/Users/nickjordan/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "/Users/nickjordan/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
   ],
   "logs": []
 }

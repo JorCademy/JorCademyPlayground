@@ -102,19 +102,19 @@
     ]
   },
   "packageFolders": {
-    "/home/martijn/.nuget/packages/": {}
+    "/Users/nickjordan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/martijn/Documents/JorCademy/JorCademyPlayground.csproj",
+      "projectUniqueName": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
       "projectName": "JorCademyPlayground",
-      "projectPath": "/home/martijn/Documents/JorCademy/JorCademyPlayground.csproj",
-      "packagesPath": "/home/martijn/.nuget/packages/",
-      "outputPath": "/home/martijn/Documents/JorCademy/obj/",
+      "projectPath": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
+      "packagesPath": "/Users/nickjordan/.nuget/packages/",
+      "outputPath": "/Users/nickjordan/github/JorCademyPlayground/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/martijn/.nuget/NuGet/NuGet.Config"
+        "/Users/nickjordan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -153,7 +153,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -162,7 +163,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
