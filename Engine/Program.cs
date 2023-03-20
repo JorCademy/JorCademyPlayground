@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Net.Mail;
+using Microsoft.Xna.Framework;
 using JorCademyPlayground;
 
 public class Program
@@ -12,7 +14,7 @@ public class Program
 public partial class Playground
 {
     // Playground initialization
-    App app;
+    private readonly App _app;
 
     // Screen properties
     private int _screenWidth;
@@ -20,55 +22,96 @@ public partial class Playground
     private string _title;
     private Color _backColor;
 
+    public float ScreenWidth => this._screenWidth;
+    public float ScreenHeight => this._screenHeight;
+    public Color BackColor => this._backColor;
+    
     public Playground() 
     { 
-        app = new App(this);
+        _app = new App(this);
 
         this._title = "JorCademy Playground"; 
         this._backColor = Color.White;
 
         // Update all properties 
-        // this.Setup();
+        this.Setup();
 
         // Process fetched changes
-        app.SetScreenTitle(_title); // NOTE: not working yet
-        app.SetScreenSize(_screenWidth, _screenHeight);
+        _app.SetScreenTitle(_title); // NOTE: not working yet
+        _app.SetScreenSize(_screenWidth, _screenHeight);
         
         // Run application
-        app.Run();
+        _app.Run();
     }
 
+    /// <summary>
+    /// Initialize the window of the application.
+    /// </summary>
+    /// <param name="title">Screen title</param>
+    /// <param name="width">Screen width</param>
+    /// <param name="height">Screen height</param>
     public void Screen(string title, int width, int height)
     {
         this._title = title;
         this._screenWidth = width;
         this._screenHeight = height;
     }
-
-    public void Backdrop(string name)
+    
+    /// <summary>
+    /// Set backdrop image.
+    /// </summary>
+    /// <param name="name">Name of corresponding file.</param>
+    /// <exception cref="NotImplementedException">Yet to be implemented</exception>
+    private void Backdrop(string name)
     {
-        
+        throw new NotImplementedException();
     }
 
     // TODO: call in Setup currently does not work properly
+    /// <summary>
+    /// Set backdrop color.
+    /// </summary>
+    /// <param name="color">Color of choice</param>
     public void Backdrop(Color color)
     {
         this._backColor = color;
-        this.app.ClearScreen(color);
+        this._app.ClearScreen(color);
     }
 
-    public void Circle(Color color, float x, float y, float radius)
+    /// <summary>
+    /// Draw a circle.
+    /// </summary>
+    /// <param name="color">Surface color</param>
+    /// <param name="x">X coordinate</param>
+    /// <param name="y">Y coordinate</param>
+    /// <param name="radius">Radius (width / 2)</param>
+    public void Circle(Color color, float x, float y, int radius)
     {
-
+        this._app.Circle(x, y, radius, color);
     }
 
-    public void Square(Color color, float x, float y, float size)
+    /// <summary>
+    /// Draw a square.
+    /// </summary>
+    /// <param name="color">Surface color</param>
+    /// <param name="x">X coordinate</param>
+    /// <param name="y">Y coordinate</param>
+    /// <param name="size">Width & height</param>
+    public void Square(Color color, float x, float y, int size)
     {
-
+        this._app.Square(x, y, size, color);
     }
 
-    public void Image(string name, float x, float y, float width, float height)
-    {
-
+    /// <summary>
+    /// Draw a sprite.
+    /// </summary>
+    /// <param name="name">Name of the corresponding file</param>
+    /// <param name="x">X coordinate</param>
+    /// <param name="y">Y coordinate</param>
+    /// <param name="width">Width</param>
+    /// <param name="height">Height</param>
+    public void Sprite(string name, float x, float y, int width, int height)
+    {   
+        this._app.Image(name, x, y, width, height, Color.White);
     }
 }

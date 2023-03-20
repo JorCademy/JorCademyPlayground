@@ -14,7 +14,7 @@ namespace JorCademyPlayground
         private SpriteBatch _spriteBatch;
         
         // Containing all primitives in the scene
-        private List<GameObject> objectsInScene;
+        private readonly List<GameObject> _objectsInScene;
 
         public App(Playground jcApp)
         {
@@ -28,7 +28,7 @@ namespace JorCademyPlayground
             _graphics.PreferredBackBufferHeight = 600;
 
             // Initialize list of textures within scene
-            objectsInScene = new List<GameObject>();       
+            _objectsInScene = new List<GameObject>();       
 
             // Link app with playground
             this.jcApp = jcApp;
@@ -73,7 +73,7 @@ namespace JorCademyPlayground
         protected override void Update(GameTime gameTime)
         {
             // Clear current frame buffer
-            this.objectsInScene.Clear();
+            this._objectsInScene.Clear();
 
             base.Update(gameTime);
         }
@@ -81,19 +81,19 @@ namespace JorCademyPlayground
         /* Drawing rectangle */
         public void Square(float x, float y, int size, Color color)
         {
-            this.objectsInScene.Add(new Rectangle(_graphics, new Vector2(x, y), size, color));
+            this._objectsInScene.Add(new Rectangle(_graphics, new Vector2(x, y), size, color));
         }
 
         /* Drawing circle */
         public void Circle(float x, float y, int size, Color color)
         {
-            this.objectsInScene.Add(new Circle(_graphics, new Vector2(x, y), size, color));
+            this._objectsInScene.Add(new Circle(_graphics, new Vector2(x, y), size, color));
         }
 
         /* Draw an image */
         public void Image(string name, float x, float y, int w, int h, Color color)
         {
-            objectsInScene.Add(new Sprite(_graphics, name, w, h, new Vector2(x, y), color));
+            _objectsInScene.Add(new Sprite(_graphics, name, w, h, new Vector2(x, y), color));
         }
 
         protected override void Draw(GameTime gameTime)
@@ -103,7 +103,7 @@ namespace JorCademyPlayground
 
             // Draw all textures within the game
             _spriteBatch.Begin();
-            foreach (GameObject obj in this.objectsInScene)
+            foreach (GameObject obj in this._objectsInScene)
             {
                 _spriteBatch.Draw(obj.CreateTexture(), new Vector2(obj.Position.X, obj.Position.Y), obj.Color);
             }
