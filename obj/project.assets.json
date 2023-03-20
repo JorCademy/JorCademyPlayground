@@ -102,24 +102,31 @@
     ]
   },
   "packageFolders": {
-    "/Users/nickjordan/.nuget/packages/": {}
+    "C:\\Users\\nick\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
+      "projectUniqueName": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
       "projectName": "JorCademyPlayground",
-      "projectPath": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
-      "packagesPath": "/Users/nickjordan/.nuget/packages/",
-      "outputPath": "/Users/nickjordan/github/JorCademyPlayground/obj/",
+      "projectPath": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
+      "packagesPath": "C:\\Users\\nick\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/nickjordan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -153,8 +160,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -163,7 +169,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
