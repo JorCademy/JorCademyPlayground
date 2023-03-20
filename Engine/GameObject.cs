@@ -138,7 +138,8 @@ namespace JorCademyPlayground
         /* Create image texture. Source: https://community.monogame.net/t/loading-png-jpg-etc-directly/7403 */
         public override Texture2D CreateTexture()
         {
-            FileStream fileStream = new FileStream("../../../Content/" + m_fileName, FileMode.Open);
+            // TODO: file path could be different depending on the dev environment
+            FileStream fileStream = new FileStream("./Content/" + m_fileName, FileMode.Open);
             Texture2D spriteAtlas = Texture2D.FromStream(this.m_graphics.GraphicsDevice, fileStream);
             fileStream.Dispose();
             return spriteAtlas;
