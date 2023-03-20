@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj": {}
+    "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\JorCademyPlayground.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj": {
+    "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\JorCademyPlayground.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
+        "projectUniqueName": "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
         "projectName": "JorCademyPlayground",
-        "projectPath": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
+        "projectPath": "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
         "packagesPath": "C:\\Users\\nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nick\\Source\\Repos\\JorCademyPlayground\\obj\\",
+        "outputPath": "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

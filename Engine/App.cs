@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace JorCademyPlayground
 {
@@ -35,12 +36,7 @@ namespace JorCademyPlayground
 
         protected override void Initialize()
         {
-            // Set window title
-            this.SetScreenTitle("JorCademy Playground");
-
-            // Setup JC app
             jcApp.Setup();
-
             base.Initialize();
         }
 
@@ -60,6 +56,12 @@ namespace JorCademyPlayground
         /* Refresh screen */
         public void ClearScreen(Color c)
         {
+            if (GraphicsDevice == null)
+            {
+                Console.WriteLine("Backdrop cannot be drawn in Setup.");
+                return;
+            }
+
             GraphicsDevice.Clear(c);
         }
 
