@@ -65,6 +65,11 @@ namespace JorCademyPlayground
             GraphicsDevice.Clear(c);
         }
 
+        public void ClearObjects()
+        {
+            this._objectsInScene.Clear();
+        }
+
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -73,7 +78,7 @@ namespace JorCademyPlayground
         protected override void Update(GameTime gameTime)
         {
             // Clear current frame buffer
-            this._objectsInScene.Clear();
+            // this._objectsInScene.Clear();
 
             base.Update(gameTime);
         }

@@ -22,8 +22,8 @@ public partial class Playground
     private string _title;
     private Color _backColor;
 
-    public float ScreenWidth => this._screenWidth;
-    public float ScreenHeight => this._screenHeight;
+    public int ScreenWidth => this._screenWidth;
+    public int ScreenHeight => this._screenHeight;
     public Color BackColor => this._backColor;
     
     public Playground() 
@@ -57,6 +57,11 @@ public partial class Playground
         this._screenHeight = height;
     }
     
+    public void Clear()
+    {
+        this._app.ClearObjects();
+    }
+
     /// <summary>
     /// Set backdrop image.
     /// </summary>
