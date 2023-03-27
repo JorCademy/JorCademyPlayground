@@ -23,22 +23,25 @@ public partial class Playground
 
     public int ScreenWidth => this._screenWidth;
     public int ScreenHeight => this._screenHeight;
+    public string ScreenTitle => this._title;
     public Color BackColor => this._backColor;
     
     public Playground() 
-    { 
-        _app = new App(this);
-
+    {
         this._title = "JorCademy Playground"; 
         this._backColor = Color.White;
-
+        
+        _app = new App(this);
+        
+        // Process fetched changes
+        _app.SetScreenTitle(_title);
+        
         // Update all properties 
         this.Setup();
 
-        // Process fetched changes
-        _app.SetScreenTitle(_title); // NOTE: not working yet
+        // Process fetched changes (continued)
         _app.SetScreenSize(_screenWidth, _screenHeight);
-        
+
         // Run application
         _app.Run();
     }
@@ -71,7 +74,6 @@ public partial class Playground
         throw new NotImplementedException();
     }
 
-    // TODO: call in Setup currently does not work properly
     /// <summary>
     /// Set backdrop color.
     /// </summary>

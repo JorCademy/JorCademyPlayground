@@ -123,11 +123,11 @@ namespace JorCademyPlayground
 
     public class Sprite : GameObject
     {
-        private string m_fileName;
+        private string m_filePath;
 
-        public Sprite(GraphicsDeviceManager g, string fileName, int width, int height, Vector2 pos, Color c)
+        public Sprite(GraphicsDeviceManager g, string filePath, int width, int height, Vector2 pos, Color c)
         {
-            this.m_fileName = fileName;
+            this.m_filePath = filePath;
             this.m_position = pos;
             this.m_width = width;
             this.m_height = height;
@@ -138,8 +138,7 @@ namespace JorCademyPlayground
         /* Create image texture. Source: https://community.monogame.net/t/loading-png-jpg-etc-directly/7403 */
         public override Texture2D CreateTexture()
         {
-            // TODO: file path could be different depending on the dev environment
-            FileStream fileStream = new FileStream("./Content/" + m_fileName, FileMode.Open);
+            FileStream fileStream = new FileStream(m_filePath, FileMode.Open);
             Texture2D spriteAtlas = Texture2D.FromStream(this.m_graphics.GraphicsDevice, fileStream);
             fileStream.Dispose();
             return spriteAtlas;

@@ -37,6 +37,7 @@ namespace JorCademyPlayground
         protected override void Initialize()
         {
             jcApp.Setup();
+            this.SetScreenTitle(jcApp.ScreenTitle);
             base.Initialize();
         }
 
