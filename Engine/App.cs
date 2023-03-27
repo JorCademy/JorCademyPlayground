@@ -28,7 +28,7 @@ namespace JorCademyPlayground
             _graphics.PreferredBackBufferHeight = 600;
 
             // Initialize list of textures within scene
-            _objectsInScene = new List<GameObject>();       
+            _objectsInScene = new List<GameObject>();
 
             // Link app with playground
             this.jcApp = jcApp;
@@ -92,6 +92,12 @@ namespace JorCademyPlayground
         public void Image(string name, float x, float y, int w, int h, Color color)
         {
             _objectsInScene.Add(new Sprite(_graphics, name, w, h, new Vector2(x, y), color));
+        }
+
+        /* Draw text */
+        public void Text(string text, float fontSize, float x, float y)
+        {
+            throw new NotImplementedException();
         }
 
         protected override void Draw(GameTime gameTime)

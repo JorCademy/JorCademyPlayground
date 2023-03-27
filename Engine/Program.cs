@@ -120,4 +120,17 @@ public partial class Playground
     {   
         this._app.Image(name, x, y, width, height, Color.White);
     }
+
+    /// <summary>
+    /// Draw a piece of text onto the screen.
+    /// </summary>
+    /// <param name="text">String to be drawn</param>
+    /// <param name="fontSize">Font size</param>
+    /// <param name="x">X coordinate</param>
+    /// <param name="y">Y coordinate</param>
+    /// <exception cref="NotImplementedException">Yet to be implemented</exception>
+    public void Text(string text, string fontFamily, int fontSize, float x, float y)
+    {
+        throw new NotImplementedException();
+    }
 }
