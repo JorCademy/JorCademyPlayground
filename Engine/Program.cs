@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Mail;
 using Microsoft.Xna.Framework;
 using JorCademyPlayground;
 

@@ -75,14 +75,6 @@ namespace JorCademyPlayground
             _spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
-        protected override void Update(GameTime gameTime)
-        {
-            // Clear current frame buffer
-            // this._objectsInScene.Clear();
-
-            base.Update(gameTime);
-        }
-
         /* Drawing rectangle */
         public void Square(float x, float y, int size, Color color)
         {
