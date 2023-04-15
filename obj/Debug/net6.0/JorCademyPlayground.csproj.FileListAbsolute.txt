@@ -73,5 +73,3 @@ C:/Users/nick/source/repos/JorCademyPlayground/obj/Debug/net6.0/refint/JorCademy
 C:/Users/nick/source/repos/JorCademyPlayground/obj/Debug/net6.0/JorCademyPlayground.pdb
 C:/Users/nick/source/repos/JorCademyPlayground/obj/Debug/net6.0/JorCademyPlayground.genruntimeconfig.cache
 C:/Users/nick/source/repos/JorCademyPlayground/obj/Debug/net6.0/ref/JorCademyPlayground.dll
-/Users/nickjordan/github/JorCademyPlayground/bin/Debug/net6.0/MonoGame.Extended.dll
-/Users/nickjordan/github/JorCademyPlayground/bin/Debug/net6.0/Newtonsoft.Json.dll

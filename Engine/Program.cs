@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using JorCademyPlayground;
-using Microsoft.Xna.Framework.Graphics;
 
 public class Program
 {
@@ -59,6 +58,21 @@ public partial class Playground
         this._screenWidth = width;
         this._screenHeight = height;
     }
+    
+    public void Clear()
+    {
+        this._app.ClearObjects();
+    }
+
+    /// <summary>
+    /// Set backdrop image.
+    /// </summary>
+    /// <param name="name">Name of corresponding file.</param>
+    /// <exception cref="NotImplementedException">Yet to be implemented</exception>
+    private void Backdrop(string name)
+    {
+        throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Set backdrop color.
@@ -71,29 +85,27 @@ public partial class Playground
     }
 
     /// <summary>
-    /// Draw an ellipse.
+    /// Draw a circle.
     /// </summary>
     /// <param name="color">Surface color</param>
     /// <param name="x">X coordinate</param>
     /// <param name="y">Y coordinate</param>
-    /// <param name="w">Surface width</param>
-    /// <param name="h">Surface height</param>
-    public void Ellipse(Color color, float x, float y, int w, int h)
+    /// <param name="radius">Radius (width / 2)</param>
+    public void Circle(Color color, float x, float y, int radius)
     {
-        this._app.Ellipse(x, y, w, h, color);
+        this._app.Circle(x, y, radius, color);
     }
 
-   /// <summary>
-   /// Draw a rectangle.
-   /// </summary>
-   /// <param name="color">Surface color</param>
-   /// <param name="x">X coordinate</param>
-   /// <param name="y">Y coordinate</param>
-   /// <param name="w">Surface width</param>
-   /// <param name="h">Surface heigth</param>
-    public void Rectangle(Color color, float x, float y, int w, int h)
+    /// <summary>
+    /// Draw a square.
+    /// </summary>
+    /// <param name="color">Surface color</param>
+    /// <param name="x">X coordinate</param>
+    /// <param name="y">Y coordinate</param>
+    /// <param name="size">Width & height</param>
+    public void Square(Color color, float x, float y, int size)
     {
-        this._app.Rectangle(x, y, w, h, color);
+        this._app.Square(x, y, size, color);
     }
 
     /// <summary>
@@ -105,20 +117,7 @@ public partial class Playground
     /// <param name="width">Width</param>
     /// <param name="height">Height</param>
     public void Sprite(string name, float x, float y, int width, int height)
-    {
-        // TODO: Filepath may vary per platform. Fix for this is necessary
-        this._app.Image($"../../../Content/{name}", x, y, width, height, Color.White);
-    }
-
-    /// <summary>
-    /// Draw a string. 
-    /// </summary>
-    /// <param name="text"></param>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="size"></param>
-    public void Text(string text, float x, float y, int size)
-    {
-        throw new NotImplementedException();
+    {   
+        this._app.Image(name, x, y, width, height, Color.White);
     }
 }
