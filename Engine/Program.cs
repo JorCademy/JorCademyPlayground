@@ -59,11 +59,6 @@ public partial class Playground
         this._screenWidth = width;
         this._screenHeight = height;
     }
-    
-    public void Clear()
-    {
-        this._app.ClearObjects();
-    }
 
     /// <summary>
     /// Set backdrop image.
@@ -86,27 +81,29 @@ public partial class Playground
     }
 
     /// <summary>
-    /// Draw a circle.
+    /// Draw an ellipse.
     /// </summary>
     /// <param name="color">Surface color</param>
     /// <param name="x">X coordinate</param>
     /// <param name="y">Y coordinate</param>
-    /// <param name="radius">Radius (width / 2)</param>
-    public void Circle(Color color, float x, float y, int w, int h)
+    /// <param name="w">Surface width</param>
+    /// <param name="h">Surface height</param>
+    public void Ellipse(Color color, float x, float y, int w, int h)
     {
-        this._app.Circle(x, y, w, h, color);
+        this._app.Ellipse(x, y, w, h, color);
     }
 
-    /// <summary>
-    /// Draw a square.
-    /// </summary>
-    /// <param name="color">Surface color</param>
-    /// <param name="x">X coordinate</param>
-    /// <param name="y">Y coordinate</param>
-    /// <param name="size">Width & height</param>
-    public void Square(Color color, float x, float y, int size)
+   /// <summary>
+   /// Draw a rectangle.
+   /// </summary>
+   /// <param name="color">Surface color</param>
+   /// <param name="x">X coordinate</param>
+   /// <param name="y">Y coordinate</param>
+   /// <param name="w">Surface width</param>
+   /// <param name="h">Surface heigth</param>
+    public void Rectangle(Color color, float x, float y, int w, int h)
     {
-        this._app.Square(x, y, size, color);
+        this._app.Rectangle(x, y, w, h, color);
     }
 
     /// <summary>
@@ -118,7 +115,8 @@ public partial class Playground
     /// <param name="width">Width</param>
     /// <param name="height">Height</param>
     public void Sprite(string name, float x, float y, int width, int height)
-    {   
-        this._app.Image(name, x, y, width, height, Color.White);
+    {
+        // TODO: Filepath may vary per platform. Fix for this is necessary
+        this._app.Image($"../../../Content/{name}", x, y, width, height, Color.White);
     }
 }

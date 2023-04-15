@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.IO;
 using System;
+using MonoGame.Extended.Sprites;
 
 namespace JorCademyPlayground
 {
@@ -13,9 +14,6 @@ namespace JorCademyPlayground
         private Playground jcApp;
         private static GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        
-        // Containing all primitives in the scene
-        private readonly List<GameObject> _objectsInScene;
 
         public App(Playground jcApp)
         {
@@ -27,9 +25,6 @@ namespace JorCademyPlayground
             // Init window
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 600;
-
-            // Initialize list of textures within scene
-            _objectsInScene = new List<GameObject>();       
 
             // Link app with playground
             this.jcApp = jcApp;
@@ -67,44 +62,48 @@ namespace JorCademyPlayground
             GraphicsDevice.Clear(c);
         }
 
-        public void ClearObjects()
-        {
-            this._objectsInScene.Clear();
-        }
-
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         /* Drawing rectangle */
-        public void Square(float x, float y, int size, Color color)
+        public void Rectangle(float x, float y, int w, int h, Color color)
         {
-            this._objectsInScene.Add(new Rectangle(_graphics, new Vector2(x, y), size, color));
+            _spriteBatch.DrawRectangle(x, y, w, h, color, 2);
         }
 
         /* Drawing circle */
-        public void Circle(float x, float y, int w, int h, Color color)
+        public void Ellipse(float x, float y, int w, int h, Color color)
         {
-            // TODO: Draw coordinates and width/height don't work perfectly at the moment
-            _spriteBatch.DrawEllipse(new Vector2(x, y), new Vector2(w * 2, h * 2), 50, color, 3);
+            // NOTE: Ellipse drawn from center
+            int dX = (int)(x + w * 2);
+            int dY = (int)(y + h * 2);
+            int dW = w * 2;
+            int dH = h * 2;
+            int sides = 50;
+            
+            _spriteBatch.DrawEllipse(new Vector2(dX, dY), new Vector2(dW, dH), sides, color, 2);
         }
 
         /* Draw an image */
-        public void Image(string name, float x, float y, int w, int h, Color color)
+        public void Image(string filepath, float x, float y, int w, int h, Color color)
         {
-            _objectsInScene.Add(new Sprite(_graphics, name, w, h, new Vector2(x, y), color));
+            FileStream fs = new FileStream(filepath, FileMode.Open);
+            Texture2D spriteAtlas = Texture2D.FromStream(this.GraphicsDevice, fs);
+            fs.Dispose();
+            
+            _spriteBatch.Draw(spriteAtlas, new Vector2(x, y), color);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             // Draw all textures within the game
             _spriteBatch.Begin();
+
+            // Draw all shapes specified in Draw method
             jcApp.Draw();
-            // foreach (GameObject obj in this._objectsInScene)
-            // {
-            //     _spriteBatch.Draw(obj.CreateTexture(), new Vector2(obj.Position.X, obj.Position.Y), obj.Color);
-            // }
+            
             _spriteBatch.End();
             base.Draw(gameTime);
         }

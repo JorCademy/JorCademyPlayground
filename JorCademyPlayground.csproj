@@ -57,6 +57,9 @@
       <Link>Engine\Extended\SharpDX.xml</Link>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Engine\GameObject.cs" />
+  </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
     <Message Text="Restoring dotnet tools" Importance="High" />
     <Exec Command="dotnet tool restore" />
