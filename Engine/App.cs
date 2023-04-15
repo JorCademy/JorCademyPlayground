@@ -78,10 +78,10 @@ namespace JorCademyPlayground
         public void Ellipse(float x, float y, int w, int h, Color color)
         {
             // NOTE: Ellipse drawn from center
-            int dX = (int)(x + w * 2);
-            int dY = (int)(y + h * 2);
-            int dW = w * 2;
-            int dH = h * 2;
+            int dX = (int)(x + w / 2);
+            int dY = (int)(y + h / 2);
+            int dW = w / 2;
+            int dH = h / 2;
             int sides = 50;
             
             _spriteBatch.DrawEllipse(new Vector2(dX, dY), new Vector2(dW, dH), sides, color, 2);
