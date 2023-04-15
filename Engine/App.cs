@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.IO;
 using System;
+using MonoGame.Extended.BitmapFonts;
 using MonoGame.Extended.Sprites;
 
 namespace JorCademyPlayground
@@ -14,7 +15,7 @@ namespace JorCademyPlayground
         private Playground jcApp;
         private static GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
+        
         public App(Playground jcApp)
         {
             // MonoGame standard settings
@@ -96,6 +97,12 @@ namespace JorCademyPlayground
             _spriteBatch.Draw(spriteAtlas, new Vector2(x, y), color);
         }
 
+        /* Draw a string */
+        public void Text(string text, float x, float y, int size)
+        {
+            throw new NotImplementedException();
+        }
+        
         protected override void Draw(GameTime gameTime)
         {
             // Draw all textures within the game

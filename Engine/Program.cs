@@ -61,16 +61,6 @@ public partial class Playground
     }
 
     /// <summary>
-    /// Set backdrop image.
-    /// </summary>
-    /// <param name="name">Name of corresponding file.</param>
-    /// <exception cref="NotImplementedException">Yet to be implemented</exception>
-    private void Backdrop(string name)
-    {
-        throw new NotImplementedException();
-    }
-
-    /// <summary>
     /// Set backdrop color.
     /// </summary>
     /// <param name="color">Color of choice</param>
@@ -118,5 +108,17 @@ public partial class Playground
     {
         // TODO: Filepath may vary per platform. Fix for this is necessary
         this._app.Image($"../../../Content/{name}", x, y, width, height, Color.White);
+    }
+
+    /// <summary>
+    /// Draw a string. 
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="size"></param>
+    public void Text(string text, float x, float y, int size)
+    {
+        throw new NotImplementedException();
     }
 }

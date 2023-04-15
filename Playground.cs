@@ -6,11 +6,11 @@ public partial class Playground
 {
     public void Setup()
     {
-        Screen("Super Mario Odyssey 2", 800, 600);
+        
     }
 
     public void Draw()
     {
-        Backdrop(Color.White);
+        
     }
 }
