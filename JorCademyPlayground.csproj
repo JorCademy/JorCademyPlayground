@@ -15,8 +15,47 @@
     <EmbeddedResource Include="Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MonoGame.Extended" Version="3.8.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\CppNet.dll">
+      <Link>Engine\Extended\CppNet.dll</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\libmojoshader_64.dll">
+      <Link>Engine\Extended\libmojoshader_64.dll</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.deps.json">
+      <Link>Engine\Extended\mgfxc.deps.json</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.dll">
+      <Link>Engine\Extended\mgfxc.dll</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.exe">
+      <Link>Engine\Extended\mgfxc.exe</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.pdb">
+      <Link>Engine\Extended\mgfxc.pdb</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.runtimeconfig.dev.json">
+      <Link>Engine\Extended\mgfxc.runtimeconfig.dev.json</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\mgfxc.runtimeconfig.json">
+      <Link>Engine\Extended\mgfxc.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\SharpDX.D3DCompiler.dll">
+      <Link>Engine\Extended\SharpDX.D3DCompiler.dll</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\SharpDX.D3DCompiler.xml">
+      <Link>Engine\Extended\SharpDX.D3DCompiler.xml</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\SharpDX.dll">
+      <Link>Engine\Extended\SharpDX.dll</Link>
+    </Content>
+    <Content Include="..\..\.nuget\packages\monogame.extended\3.8.0\contentFiles\any\netstandard2.0\SharpDX.xml">
+      <Link>Engine\Extended\SharpDX.xml</Link>
+    </Content>
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
     <Message Text="Restoring dotnet tools" Importance="High" />

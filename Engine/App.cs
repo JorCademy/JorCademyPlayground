@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.IO;
@@ -83,9 +84,10 @@ namespace JorCademyPlayground
         }
 
         /* Drawing circle */
-        public void Circle(float x, float y, int size, Color color)
+        public void Circle(float x, float y, int w, int h, Color color)
         {
-            this._objectsInScene.Add(new Circle(_graphics, new Vector2(x, y), size, color));
+            // TODO: Draw coordinates and width/height don't work perfectly at the moment
+            _spriteBatch.DrawEllipse(new Vector2(x, y), new Vector2(w * 2, h * 2), 50, color, 3);
         }
 
         /* Draw an image */
@@ -96,15 +98,13 @@ namespace JorCademyPlayground
 
         protected override void Draw(GameTime gameTime)
         {
-            // Update JorCademy app
-            jcApp.Draw();
-
             // Draw all textures within the game
             _spriteBatch.Begin();
-            foreach (GameObject obj in this._objectsInScene)
-            {
-                _spriteBatch.Draw(obj.CreateTexture(), new Vector2(obj.Position.X, obj.Position.Y), obj.Color);
-            }
+            jcApp.Draw();
+            // foreach (GameObject obj in this._objectsInScene)
+            // {
+            //     _spriteBatch.Draw(obj.CreateTexture(), new Vector2(obj.Position.X, obj.Position.Y), obj.Color);
+            // }
             _spriteBatch.End();
             base.Draw(gameTime);
         }

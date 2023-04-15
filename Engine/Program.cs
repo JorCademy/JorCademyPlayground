@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using JorCademyPlayground;
+using Microsoft.Xna.Framework.Graphics;
 
 public class Program
 {
@@ -91,9 +92,9 @@ public partial class Playground
     /// <param name="x">X coordinate</param>
     /// <param name="y">Y coordinate</param>
     /// <param name="radius">Radius (width / 2)</param>
-    public void Circle(Color color, float x, float y, int radius)
+    public void Circle(Color color, float x, float y, int w, int h)
     {
-        this._app.Circle(x, y, radius, color);
+        this._app.Circle(x, y, w, h, color);
     }
 
     /// <summary>

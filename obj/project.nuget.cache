@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RvH4rHklQrS9dLB+gbjXDmrZ8NpypcwAoSYjaKlxqIFCzdFxdwBliG6nqhxLiRe1hoeowE4HCZrPROfqB/ZVmg==",
+  "dgSpecHash": "+R21Xkp0MzxD6dFDRtzaq5p39YKE1ODREnm6S0g5iYoMqvqngOF/bBcrWT4XsuRM+2cpAOBk8N35Wqe3vjIwrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nick\\source\\repos\\JorCademyPlayground\\JorCademyPlayground.csproj",
+  "projectFilePath": "/Users/nickjordan/github/JorCademyPlayground/JorCademyPlayground.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nick\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\nick\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+    "/Users/nickjordan/.nuget/packages/monogame.content.builder.task/3.8.1.303/monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "/Users/nickjordan/.nuget/packages/monogame.extended/3.8.0/monogame.extended.3.8.0.nupkg.sha512",
+    "/Users/nickjordan/.nuget/packages/monogame.framework.desktopgl/3.8.1.303/monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "/Users/nickjordan/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
