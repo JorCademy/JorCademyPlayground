@@ -13,7 +13,7 @@ namespace JorCademyPlayground
         private static GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         
-        // Containing all primitives in the scene
+        // Containing all objects in the scene
         private readonly List<SceneObject> _objectsInScene;
 
         public App(Playground jcApp)
@@ -97,7 +97,7 @@ namespace JorCademyPlayground
         protected override void Draw(GameTime gameTime)
         {
             // Update JorCademy app
-            jcApp.Draw();
+            jcApp.Update();
 
             // Draw all textures within the game
             _spriteBatch.Begin();

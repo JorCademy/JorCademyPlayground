@@ -1,14 +1,16 @@
 using Microsoft.Xna.Framework;
+using System;
 
 public partial class Playground
 {
+
     public void Setup()
     {
-        Screen("Playground", 800, 600);
+
     }
 
-    public void Draw()
+    public void Update()
     {
-    
+
     }
 }
